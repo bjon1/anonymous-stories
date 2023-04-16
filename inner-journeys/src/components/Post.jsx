@@ -1,12 +1,13 @@
 
-const Post = () => {
+const Post = ({post}) => {
 
     return(
         <li className="Post">
-            <a href="#" contenteditable="true">
+            <a href="#">
                 <span></span>
-                <h2>Title-1</h2>
-                <p>This is Sample Content</p>
+                <h2>{post.title}</h2>
+                <p>{post.created_at}</p>
+                <p>{post.upvotes}</p>
             </a>
         </li>
     )

@@ -3,11 +3,11 @@ import Post from './Post';
 const Board = ({Posts}) => {
 
     return(
-        <ul>
-            {Posts ?? Posts.map((post, i) => {
-                <Post />
-            })}
-        </ul>
+        <>
+            {Posts && Posts.map((post, i) => (
+            <ul key={i}><Post post={post} /></ul>
+            ))}
+        </>
     )
 }
 
