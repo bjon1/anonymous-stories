@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 
 const NotFound = () => {
 
     return(
         <div>
             Not Found
-            <button>Back Home</button>
+            <Link to='/'>
+                <button>Back Home</button>
+            </Link>
         </div>
     )
 }
