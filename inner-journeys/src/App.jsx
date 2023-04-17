@@ -7,6 +7,8 @@ import './App.css'
 function App() {
 
   const [Posts, setPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
   
   useEffect(() => {
     const channel = supabase 
@@ -47,9 +49,30 @@ function App() {
     setPosts(data);
   }
 
+  const searchPosts = (searchValue) => {
+    setSearchInput(searchValue);
+    console.log("SEARCH", searchInput);
+    console.log("Filtered Posts", filteredPosts);
+    if(searchValue !== '') {
+      const filteredData = Posts.filter((item) => {
+        return Object.values(item.title)
+          .join("")
+          .toLowerCase()
+          .includes(searchValue.toLowerCase());
+      });
+      setFilteredPosts(filteredData);
+    }
+  }
+
   return (
     <div className="App">
-      <Board Posts={Posts} />
+      <input
+        className="input is-medium"
+        type="text"
+        placeholder="Search..."
+        onChange={(e) => searchPosts(e.target.value)}
+      />
+      <Board Posts={Posts} filteredPosts={filteredPosts} searchInput={searchInput} />
     </div>
   )
 }

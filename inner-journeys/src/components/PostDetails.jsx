@@ -10,7 +10,6 @@ const PostDetails = () => {
 
     useEffect(() => {
         getPost();
-        console.log("Post", post);
     }, [])
 
     const getPost = async () => {

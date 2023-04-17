@@ -14,9 +14,9 @@ const Post = ({post}) => {
         <div className="Post">
             <div>
                 <span></span>
-                <h2>{post.title}</h2>
-                <p>{post.created_at}</p>
-                <p>{post.upvotes}</p>
+                <h2>Title: {post.title}</h2>
+                <p>Time Created: {post.created_at}</p>
+                <p>Upvotes: {post.upvotes}</p>
                 <button onClick={deletePost}>delete</button>
             </div>
         </div>
