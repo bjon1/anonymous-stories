@@ -21,14 +21,12 @@ function App() {
           if(fetchData() && payload.eventType === 'INSERT'){
             console.log("INSERT ", payload.new);
             setPosts([...Posts, payload.new]);
-          } else if(payload.eventType === 'UPDATE'){
-            fetchData();
+          } else if(fetchData() && payload.eventType === 'UPDATE'){
             console.log("UPDATE ", payload.new);
             const newPosts = [...Posts];
             newPosts[payload.new.id] = payload.new;
             setPosts(newPosts)
-          } else if(payload.eventType === 'DELETE'){
-            fetchData();
+          } else if(fetchData() && payload.eventType === 'DELETE'){
             console.log("DELETE ", payload.new);
             const newPosts = [...Posts];
             newPosts.splice(payload.new.id, 1);
