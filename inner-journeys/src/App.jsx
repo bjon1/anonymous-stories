@@ -46,6 +46,7 @@ function App() {
     const {data} = await supabase 
       .from('Posts')
       .select('*')
+      .order('created_at', { ascending: false })
     setPosts(data);
   }
 
@@ -63,6 +64,7 @@ function App() {
       setFilteredPosts(filteredData);
     }
   }
+
 
   return (
     <div className="App">

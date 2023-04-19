@@ -5,17 +5,21 @@ import { supabase } from '../client';
 
 const Board = ({Posts, filteredPosts, searchInput}) => {
 
+    /*
     const addPost = async () => {
         await supabase
             .from('Posts')
             .insert({title:"DEFAULT", content:"DEFAULT CONTENT", upvotes: 100})
             .select();
     }
+    */
 
     return(
         <>
 
-            <button onClick={addPost}>+</button>
+            <Link to={'/update/'}>
+                <button>+</button>
+            </Link>
 
             { searchInput.length > 0  
                 ? filteredPosts && filteredPosts.map((post, i) => (

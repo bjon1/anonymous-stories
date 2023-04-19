@@ -1,12 +1,15 @@
 
 import { supabase } from '../client';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const PostDetails = () => {
     
-    const [post, setPost] = useState({})
     const params = useParams();
+    const navigate = useNavigate();
+
+    const [post, setPost] = useState({})
 
     useEffect(() => {
         getPost();
@@ -26,8 +29,10 @@ const PostDetails = () => {
             .from('Posts')
             .delete()
             .eq('id', params.id)
+        navigate('/');
+        alert("Post Deleted!");
     }
-
+    
     return(
         <div>
             Welcome to Post Details
@@ -38,6 +43,9 @@ const PostDetails = () => {
             <p>Upvotes: {post.upvotes}</p>
             <p>Comments: {post.comments}</p>
             <button onClick={deletePost}>delete</button>
+            <Link to={`/update/${post.id}`}>
+                <button>update</button>
+            </Link>
         </div>
     )
 }
