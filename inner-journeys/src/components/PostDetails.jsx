@@ -32,6 +32,16 @@ const PostDetails = () => {
         navigate('/');
         alert("Post Deleted!");
     }
+
+    const upvotePost = async () => {
+        await supabase
+            .from('Posts')
+            .update({
+                upvotes: post.upvotes + 1
+            })
+            .eq('id', post.id);
+        getPost();
+    }
     
     return(
         <div>
@@ -42,6 +52,9 @@ const PostDetails = () => {
             <p>Content: {post.content}</p>
             <p>Upvotes: {post.upvotes}</p>
             <p>Comments: {post.comments}</p>
+
+            <button onClick={upvotePost}>upvote</button>
+
             <button onClick={deletePost}>delete</button>
             <Link to={`/update/${post.id}`}>
                 <button>update</button>
