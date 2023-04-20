@@ -70,13 +70,15 @@ function App() {
   return (
     <div className="App">
       <input
-        className="input is-medium"
+        className="search_post"
         type="text"
         placeholder="Search..."
         onChange={(e) => searchPosts(e.target.value)}
       />
       <Link to={'/update/'}>
-        <button id="addButton">+</button>
+        <button id="addButton">
+        <i class="fa-solid fa-plus"></i>
+        </button>
       </Link>
       <Board Posts={Posts} filteredPosts={filteredPosts} searchInput={searchInput} />
     </div>

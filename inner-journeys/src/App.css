@@ -1,37 +1,90 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+/*@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 body, html {
   margin: 0;
   padding: 0;
+  font-family: 'DM Sans', sans-serif;
 }
+
+/*Post-related*/
 
 #container {
   display: flex;
   flex-wrap: wrap;
-  width: 100vw;
-  height: 100vh;
 }
 
-@media (max-width: 600px) {
-  .square {
-    flex-basis: calc(50% - 1px);
-  }
+.link-button {
+  text-decoration: none;
+  color: inherit;
+}
+.link-button:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
-@media (max-width: 400px) {
-  .square {
-    flex-basis: 100%;
-  }
+.square {
+  flex: 1 0 calc(33.333% - 1px);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1vw;
+  font-weight: bold;
 }
+
+/*Search Bar*/
+
+.search_post {
+  position: fixed;
+  margin: 0 auto;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.search_post[type="text"] {
+  width: 40%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+/*Add Button*/
 
 #addButton {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  font-size: 1.1em;
-  background-color: #333;
-  color: white;
-  border: none;
+  background-color: #ffffff;
   cursor: pointer;
+  position: fixed;
+  bottom: 5vh;
+  right: 20%;
+  padding: 10px 15px 10px 15px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
+#addButton:hover {
+  transform: scale(1.1);
+}
+
+/*General Styling*/
+.is-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.is-flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+
