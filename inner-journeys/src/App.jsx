@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from './client';
+import { Link } from "react-router-dom";
 import Board from './components/Board';
 import './App.css'
 
@@ -74,6 +75,9 @@ function App() {
         placeholder="Search..."
         onChange={(e) => searchPosts(e.target.value)}
       />
+      <Link to={'/update/'}>
+        <button id="addButton">+</button>
+      </Link>
       <Board Posts={Posts} filteredPosts={filteredPosts} searchInput={searchInput} />
     </div>
   )
