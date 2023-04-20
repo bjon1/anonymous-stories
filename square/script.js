@@ -2,15 +2,28 @@ const container = document.getElementById("container");
 const addButton = document.getElementById("addButton");
 
 const colors = [
-    "#FFC857",
-    "#E9724C",
-    "#C5283D",
-    "#481D24",
-    "#255F85"
+    "#2E6171",
+    "#556F7A",
+    "#798086",
+    "#B79FAD",
+    "#D4AFCD",
+    "#4ECDC4",
+    "#6C464F",
+    "#CBC5EA",
+    "#8E9DCC",
+    "#D9DBF1",
+    "#B2ABF2",
+    "#977390",
+    "#A6B1E1"
+
 ];
 
 function getRandomColor() {
-    return colors[Math.floor(Math.random() * colors.length)];
+    const chosen = colors[Math.floor(Math.random() * (colors.length-2))];
+    const color = colors.shift();
+    colors.push(color);
+    console.log(colors);
+    return chosen
 }
 
 function addSquare() {
