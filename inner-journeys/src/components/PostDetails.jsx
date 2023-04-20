@@ -57,7 +57,7 @@ const PostDetails = () => {
 
             <button onClick={deletePost}>delete</button>
             <Link to={`/update/${post.id}`}>
-                <button>update</button>
+                <button>edit</button>
             </Link>
         </div>
     )
