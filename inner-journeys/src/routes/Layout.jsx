@@ -4,9 +4,9 @@ const Layout = () => {
 
 
     return(
-        <div>
+        <>
             <Outlet />
-        </div>
+        </>
     );
 };
 

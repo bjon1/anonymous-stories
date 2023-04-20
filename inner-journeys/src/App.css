@@ -1,1 +1,37 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media (max-width: 600px) {
+  .square {
+    flex-basis: calc(50% - 1px);
+  }
+}
+
+@media (max-width: 400px) {
+  .square {
+    flex-basis: 100%;
+  }
+}
+
+#addButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
