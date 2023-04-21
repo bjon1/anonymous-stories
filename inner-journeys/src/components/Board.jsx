@@ -9,7 +9,7 @@ const Board = ({ Posts, filteredPosts, searchInput }) => {
   const containerRef = useRef(null);
 
   return (
-    <div id="container" ref={containerRef}>
+    <div id="grid" ref={containerRef}>
       {searchInput.length > 0
         ? filteredPosts &&
           filteredPosts.map((post, i) => (

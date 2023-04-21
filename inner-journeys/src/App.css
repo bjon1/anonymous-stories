@@ -1,19 +1,64 @@
 /*@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";*/
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import 'https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
 
 :root {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 body, html {
   margin: 0;
   padding: 0;
   background-color: #B3C2E8;
-}
+} 
 
 /*Post-related*/
+
+#grid {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+  }
+  
+  .square {
+    padding: 5px;
+  }
+}
+
+/* Media query for screens between 600px and 900px */
+@media (min-width: 600px) and (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  
+  .square {
+    padding: 8px;
+  }
+}
+
+/* Media query for screens larger than 900px */
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  
+  .square {
+    padding: 10px;
+  }
+}
 
 #container {
   display: flex;
@@ -178,6 +223,11 @@ input[type="submit"]:hover {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+
+.title, .subtitle, p, button, input { 
+  color: rgb(22, 24, 36);
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .post_poster, .post_time, .post_content, .post_upvotes, .post_comments {
