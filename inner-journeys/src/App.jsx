@@ -69,17 +69,20 @@ function App() {
 
   return (
     <div className="App">
-      <input
-        className="search_post"
-        type="text"
-        placeholder="Search..."
-        onChange={(e) => searchPosts(e.target.value)}
-      />
-      <Link to={'/update/'}>
-        <button id="addButton">
-        <i class="fa-solid fa-plus"></i>
-        </button>
-      </Link>
+      <div className="is-flex-column">
+        <input
+          className="search_post"
+          type="text"
+          placeholder="Search..."
+          onChange={(e) => searchPosts(e.target.value)}
+        />
+        <Link to={'/update/'}>
+          <button id="addButton">
+          <i className="fa-solid fa-plus"></i>
+          </button>
+        </Link>
+      </div>
+
       <Board Posts={Posts} filteredPosts={filteredPosts} searchInput={searchInput} />
     </div>
   )

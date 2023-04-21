@@ -72,7 +72,7 @@ const PostChange = () => {
             {params.id ? 
                 (
                 <form>
-                    Update Post<br/>
+                    <div className="title">Update Post</div>
                     <label for="title">Title:</label><br/>
                     <input type="text" id="title" name="title" value={post.title} onChange={handleChange}/>
                     
@@ -86,8 +86,9 @@ const PostChange = () => {
                 </form>
                 )
             :   (
+                
                 <form>
-                    Add Post<br/>
+                    <div className="title">Add Post</div>
                     <label for="title">Title:</label>
                     <input type="text" id="title" name="title" value={post.title} onChange={handleChange}/>
                     
@@ -97,7 +98,7 @@ const PostChange = () => {
                     <label for="content">Content:</label>
                     <textarea id="content" name="content" rows="5" cols="30" value={post.content} onChange={handleChange}></textarea>
                     
-                    <input type="submit" value="Submit" onClick={addPost}/>
+                    <input type="submit" value="Add" onClick={addPost}/>
                 </form>
                 )
             }

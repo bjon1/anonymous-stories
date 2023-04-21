@@ -44,20 +44,18 @@ const PostDetails = () => {
     }
     
     return(
-        <div>
-            Welcome to Post Details
-            <h2>Title: {post.title}</h2>
-            <p>Name: {post.name}</p>
-            <p>Time: {post.created_at}</p>
-            <p>Content: {post.content}</p>
-            <p>Upvotes: {post.upvotes}</p>
-            <p>Comments: {post.comments}</p>
+        <div className="post_details">
+            <div className="title is-3">{post.title}</div>
+            {post.name ? (<p className="post_poster">Posted by: {post.name}</p>) : null}
+            <p className="post_time subtitle is-6">{post.created_at ? post.created_at.substring(0,10) : null}</p>
+            <p className="post_content">{post.content}</p>
+            <p className="post_upvotes">Upvotes: {post.upvotes}</p>
+            <p className="post_comments">Comments: {post.comments}</p>
 
-            <button onClick={upvotePost}>upvote</button>
-
-            <button onClick={deletePost}>delete</button>
+            <button className="btn-upvote" onClick={upvotePost}>upvote</button>
+            <button className="btn-delete" onClick={deletePost}>delete</button>
             <Link to={`/update/${post.id}`}>
-                <button>edit</button>
+                <button className="btn-edit">edit</button>
             </Link>
         </div>
     )
