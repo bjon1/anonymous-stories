@@ -78,7 +78,7 @@ function App() {
         />
         <Link to={'/update/'}>
           <button id="addButton">
-          <i className="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-plus"></i>
           </button>
         </Link>
       </div>
