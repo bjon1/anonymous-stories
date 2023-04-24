@@ -9,7 +9,8 @@ const PostDetails = () => {
     const params = useParams();
     const navigate = useNavigate();
 
-    const [post, setPost] = useState({})
+    const [post, setPost] = useState({});
+    const [newComment, setNewComment] = useState('');
 
     useEffect(() => {
         getPost();
@@ -42,6 +43,26 @@ const PostDetails = () => {
             .eq('id', post.id);
         getPost();
     }
+
+    const handleChange = (e) => {
+        const { value } = e.target;
+        setNewComment((prev) => {
+            return {
+                ...prev, value
+            }
+        })
+        console.log("Comment Update: ", newComment.value);
+    }
+
+    const addComment = async (e) => {
+        console.log("add comment");
+        e.preventDefault();
+        await supabase
+            .from('Posts')
+            .update([{ comments: [...(post.comments ? post.comments : []), newComment.value] }])
+            .eq('id', params.id)
+        getPost();
+    }
     
     return(
         <div className="post_details">
@@ -49,14 +70,33 @@ const PostDetails = () => {
             {post.name ? (<p className="post_poster">Posted by: {post.name}</p>) : null}
             <p className="post_time subtitle is-6">{post.created_at ? post.created_at.substring(0,10) : null}</p>
             <p className="post_content">{post.content}</p>
-            <p className="post_upvotes">Upvotes: {post.upvotes}</p>
-            <p className="post_comments">Comments: {post.comments}</p>
-
-            <button className="btn-upvote" onClick={upvotePost}>upvote</button>
+            <button className="btn-upvote" onClick={upvotePost}>Upvotes: {post.upvotes}</button>
             <button className="btn-delete" onClick={deletePost}>delete</button>
             <Link to={`/update/${post.id}`}>
                 <button className="btn-edit">edit</button>
             </Link>
+
+            <div className="post_comments">
+                <div className="title">Comments</div>
+                <ul>
+                    {post.comments && 
+                        post.comments.map((comment, i) => (
+                            <li>
+                                <div className="comment">
+                                <p className="comment-text">{comment}</p>
+                                </div>
+                            </li>
+                        ))
+                    }
+                </ul>
+                
+                <form className="comment-form">
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" placeholder="Add a comment..." onChange={handleChange} required></textarea>
+                    <button type="submit" onClick={addComment}>Submit</button>
+                </form>
+            </div>
+
         </div>
     )
 }

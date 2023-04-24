@@ -3,17 +3,12 @@ import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../client';
 
-const Post = ({post, containerRef}) => {
+const Post = ({post}) => {
     const squareRef = useRef(null);
 
-    const resizeSquares = () => {
-        squareRef.current.style.flexBasis = `calc(${100 / Math.floor(containerRef.current.clientWidth / squareRef.current.clientHeight)}% - 1px)`; //-1px
-    }
-
     useEffect(() => {
-        resizeSquares();
         getRandomColor();
-        console.log("runs once");
+        console.log("Random Color");
     }, [])
       
     const getRandomColor = () => {
@@ -38,8 +33,6 @@ const Post = ({post, containerRef}) => {
             .eq('id', post.id);
         getPost();
     }
-
-    window.addEventListener('resize', resizeSquares);
 
     return(
         <div className="square" ref={squareRef} to={`/details/${post.id}`}>

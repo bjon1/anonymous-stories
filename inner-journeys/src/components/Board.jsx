@@ -6,18 +6,16 @@ import { supabase } from '../client';
 
 const Board = ({ Posts, filteredPosts, searchInput }) => {
 
-  const containerRef = useRef(null);
-
   return (
-    <div id="grid" ref={containerRef}>
+    <div id="grid">
       {searchInput.length > 0
         ? filteredPosts &&
           filteredPosts.map((post, i) => (
-            <Post post={post} containerRef={containerRef}/>
+            <Post post={post} />
           ))
         : Posts &&
           Posts.map((post, i) => (
-            <Post post={post} containerRef={containerRef}/>
+            <Post post={post} />
           ))}
     </div>
   );
