@@ -16,7 +16,8 @@ body, html {
 /*Post-related*/
 
 #grid {
-  margin: 5em 15em;
+  margin: 1em 15em;
+  margin-bottom: 8em;
   display: grid;
   height: 100vh;
   grid-template-columns: repeat(3, 1fr);
@@ -28,7 +29,9 @@ body, html {
 /* Media query for screens between 600px and 1200px */
 @media (min-width: 700px) and (max-width: 1200px) {
   #grid {
-    margin: 5em calc(15em - 15vw) 15em calc(15em - 15vw);
+    margin-left: calc(15em - 15vw);
+    margin-right: calc(15em - 15vw);
+    margin-bottom: 20em;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
   }
@@ -41,7 +44,8 @@ body, html {
 /* Media query for screens smaller than 600px */
 @media (max-width: 700px) {
   #grid {
-    margin: 1em calc(10em - 25vw) 15em calc(10em - 25vw);
+    
+    margin: 1em calc(10em - 25vw) 30em calc(10em - 25vw);
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(8, 1fr);
   }
@@ -93,42 +97,11 @@ body, html {
 }
 
 /*Search Bar*/
-.search_post[type="text"] {
-  z-index: 999;
-  position: fixed;
-  margin: 0 auto;
-  bottom: 5vh;
-  left: 0;
-  right: 0;
-  width: 40%;
-  background-color: #ffffff;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  padding: 10px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
 
-/*Add Button*/
-
-#addButton {
-  z-index: 999;
-  background-color: #ffffff;
-  cursor: pointer;
-  position: fixed;
-  bottom: 5.2vh;
-  right:60px;
-  bottom: 60px;
-  transform: scale(2.5);
-  padding: 10px 13px;
-  border-radius: 50%;
-  border: none;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-#addButton:hover {
-  transform: scale(2.6);
+.search_post{
+  padding: 8px;
+  border-radius: 4px;
+  margin-right: 5px;
 }
 
 /*General Styling*/
@@ -144,7 +117,7 @@ body, html {
 
 /*Add Post Form*/
 form {
-  width: 80%;
+  width: 60%;
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
@@ -323,4 +296,35 @@ input[type="submit"]:hover {
 
 .comment-form button:hover {
   background-color: #005f6b;
+}
+
+/*Navbar*/
+
+.search_post {
+  width: 150px;
+  margin-bottom: 6px;
+}
+
+#addButton {
+  background-color: #ffffff;
+  cursor: pointer;
+  padding: 10px 13px;
+  border: none;
+}
+
+#addButton:hover {
+  transform: scale(1.05);
+}
+
+.buttons.is-bottom-left {
+  position: fixed;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 auto;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  z-index: 1;
 }

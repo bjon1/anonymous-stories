@@ -79,7 +79,7 @@ const PostDetails = () => {
             <div className="post_comments">
                 <div className="title">Comments</div>
                 <ul>
-                    {post.comments && 
+                    {post.comments ? post.comments && 
                         post.comments.map((comment, i) => (
                             <li>
                                 <div className="comment">
@@ -87,6 +87,8 @@ const PostDetails = () => {
                                 </div>
                             </li>
                         ))
+                    :
+                    "No Comments...Yet!"
                     }
                 </ul>
                 

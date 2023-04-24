@@ -66,19 +66,44 @@ function App() {
     }
   }
 
+  const sortDefault = () => {
+    console.log("Before Sorted ID ", Posts);
+    Posts.sort((a, b) => b.id - a.id);
+    console.log("Sorted ID", Posts);
+  }
+
+  const sortUpvotes = () => {
+    console.log("Before Sorted Upvotes ", Posts);
+    Posts.sort((a, b) => b.upvotes - a.upvotes);
+    console.log("Sorted Upvotes", Posts);
+  }
+
+  const sortTime = () => {
+    Posts.sort((a, b) => b.created_at.substring(5, 10) - a.created_at.substring(5, 10));
+  }
 
   return (
     <div className="App">
-      <div className="is-flex-column">
+
+      <div className="buttons is-grouped is-bottom-left">
+        <div className="sort_default button is-light is-primary" onClick={sortDefault}>
+          Default
+        </div>
+        <div className="sort_upvotes button is-light is-link" onClick={sortUpvotes}>
+          <i className="fa-solid fa-thumbs-up"></i>
+        </div>
+        <div className="sort_time button is-light is-warning " onClick={sortTime}>
+          <i className="fa-solid fa-clock"></i>
+        </div>
         <input
-          className="search_post"
-          type="text"
-          placeholder="Search..."
-          onChange={(e) => searchPosts(e.target.value)}
+            className="search_post"
+            type="text"
+            placeholder="Search..."
+            onChange={(e) => searchPosts(e.target.value)}
         />
         <Link to={'/update/'}>
-          <button id="addButton">
-            <i class="fa-solid fa-plus"></i>
+          <button className="button" id="addButton">
+            <i className="fa-solid fa-plus"></i>
           </button>
         </Link>
       </div>
