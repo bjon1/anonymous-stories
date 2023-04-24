@@ -21,7 +21,6 @@ const PostDetails = () => {
             .from('Posts')
             .select()
             .eq('id', params.id)
-            console.log("Post", post);
         setPost(data[0]);
     }
 
@@ -31,7 +30,7 @@ const PostDetails = () => {
             .delete()
             .eq('id', params.id)
         navigate('/');
-        alert("Post Deleted!");
+        //alert("Post Deleted!");
     }
 
     const upvotePost = async () => {
@@ -51,11 +50,9 @@ const PostDetails = () => {
                 ...prev, value
             }
         })
-        console.log("Comment Update: ", newComment.value);
     }
 
     const addComment = async (e) => {
-        console.log("add comment");
         e.preventDefault();
         await supabase
             .from('Posts')

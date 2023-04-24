@@ -53,8 +53,6 @@ function App() {
 
   const searchPosts = (searchValue) => {
     setSearchInput(searchValue);
-    console.log("SEARCH", searchInput);
-    console.log("Filtered Posts", filteredPosts);
     if(searchValue !== '') {
       const filteredData = Posts.filter((item) => {
         return Object.values(item.title)
@@ -66,29 +64,19 @@ function App() {
     }
   }
 
-  const sortDefault = () => {
-    console.log("Before Sorted ID ", Posts);
-    Posts.sort((a, b) => b.id - a.id);
-    console.log("Sorted ID", Posts);
-  }
-
   const sortUpvotes = () => {
-    console.log("Before Sorted Upvotes ", Posts);
-    Posts.sort((a, b) => b.upvotes - a.upvotes);
-    console.log("Sorted Upvotes", Posts);
+    const sortedPosts = [...Posts].sort((a, b) => b.upvotes - a.upvotes);
+    setPosts(sortedPosts);
   }
 
   const sortTime = () => {
-    Posts.sort((a, b) => b.created_at.substring(5, 10) - a.created_at.substring(5, 10));
+    const sortedPosts = [...Posts].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+    setPosts(sortedPosts);
   }
 
   return (
     <div className="App">
-
       <div className="buttons is-grouped is-bottom-left">
-        <div className="sort_default button is-light is-primary" onClick={sortDefault}>
-          Default
-        </div>
         <div className="sort_upvotes button is-light is-link" onClick={sortUpvotes}>
           <i className="fa-solid fa-thumbs-up"></i>
         </div>

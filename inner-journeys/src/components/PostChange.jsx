@@ -24,7 +24,6 @@ const PostChange = () => {
             .from('Posts')
             .select()
             .eq('id', params.id)
-            console.log("Post", post);
         setPost(data[0]);
     }
 
@@ -39,7 +38,7 @@ const PostChange = () => {
             })
             .eq('id', params.id);
         navigate('/');
-        alert(`You have updated ${post.title}!`);
+        //alert(`You have updated ${post.title}!`);
     }
 
     const addPost = async (e) => {
@@ -53,7 +52,7 @@ const PostChange = () => {
             })
             .select();
         navigate('/');
-        alert(`You have added ${post.title}!`);
+        //alert(`You have added ${post.title}!`);
     }
 
     const handleChange = (event) => {

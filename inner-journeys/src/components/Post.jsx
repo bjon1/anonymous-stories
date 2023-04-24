@@ -8,7 +8,6 @@ const Post = ({post}) => {
 
     useEffect(() => {
         getRandomColor();
-        console.log("Random Color");
     }, [])
       
     const getRandomColor = () => {
@@ -31,7 +30,6 @@ const Post = ({post}) => {
                 upvotes: post.upvotes + 1
             })
             .eq('id', post.id);
-        getPost();
     }
 
     return(
@@ -44,7 +42,7 @@ const Post = ({post}) => {
                         </div>
                     </Link>
                 <button className="likes-btn" onClick={upvotePost}>
-                    <i class="fa-regular fa-thumbs-up"></i>
+                    <i className="fa-regular fa-thumbs-up"></i>
                     <span>{post.upvotes}</span>
                 </button>
             </div>
