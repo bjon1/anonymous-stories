@@ -4,7 +4,7 @@ Submitted by: **Benjamin Jon**
 
 This web app: **Allows users to anonymously share their deepest secrets**
 
-Time spent: **12** hours spent in total
+Time spent: **13** hours spent in total
 
 ## Required Features
 
@@ -15,7 +15,7 @@ The following **required** functionality is completed:
 - [X] **A home feed displaying previously created posts**
 - [X] **By default, the time created, title, and number of upvotes for each post is shown on the feed**
 - [X] **Clicking on a post shall direct the user to a new page for the selected post**
-- [ ] **Users can sort posts by either their created time or upvotes count**
+- [X] **Users can sort posts by either their created time or upvotes count**
 - [X] **Users can search for posts by title**
 - [X] **A separate post page for each created post, where any additional information is shown is linked whenever a user clicks a post**
 - [X] **Users can leave comments underneath a post on the post's separate page**
@@ -41,22 +41,18 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./anonymousstories.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+https://www.cockos.com/licecap/
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Future updates include: a log-in system
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2023] [Benjamin Jon]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
