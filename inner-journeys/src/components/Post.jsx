@@ -9,7 +9,7 @@ const Post = ({post}) => {
     useEffect(() => {
         getRandomColor();
     }, [])
-      
+    
     const getRandomColor = () => {
         const colors =
         [
@@ -22,16 +22,7 @@ const Post = ({post}) => {
 
         squareRef.current.style.backgroundColor = colors[Math.floor(Math.random() * (colors.length-2))];
     };
-
-    const upvotePost = async () => {
-        await supabase
-            .from('Posts')
-            .update({
-                upvotes: post.upvotes + 1
-            })
-            .eq('id', post.id);
-    }
-
+    
     return(
         <div className="square" ref={squareRef} to={`/details/${post.id}`}>
             <div className="is-flex-column">
@@ -41,10 +32,10 @@ const Post = ({post}) => {
                             <p>{post.created_at.substring(5, 10)}</p>
                         </div>
                     </Link>
-                <button className="likes-btn" onClick={upvotePost}>
+                <div className="likes-btn">
                     <i className="fa-regular fa-thumbs-up"></i>
                     <span>{post.upvotes}</span>
-                </button>
+                </div>
             </div>
         </div>
     )

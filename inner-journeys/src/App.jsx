@@ -77,20 +77,20 @@ function App() {
   return (
     <div className="App">
       <div className="buttons is-grouped is-bottom-left">
-        <div className="sort_upvotes button is-light is-link" onClick={sortUpvotes}>
+        <div className="sort_upvotes button is-light is-link is-medium" onClick={sortUpvotes}>
           <i className="fa-solid fa-thumbs-up"></i>
         </div>
-        <div className="sort_time button is-light is-warning " onClick={sortTime}>
+        <div className="sort_time button is-light is-warning is-medium" onClick={sortTime}>
           <i className="fa-solid fa-clock"></i>
         </div>
         <input
-            className="search_post"
+            className="search_post is-medium"
             type="text"
             placeholder="Search..."
             onChange={(e) => searchPosts(e.target.value)}
         />
         <Link to={'/update/'}>
-          <button className="button" id="addButton">
+          <button className="button is-medium" id="addButton">
             <i className="fa-solid fa-plus"></i>
           </button>
         </Link>

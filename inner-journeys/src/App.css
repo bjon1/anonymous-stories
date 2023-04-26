@@ -76,12 +76,6 @@ body, html {
   transition: all 0.3s ease-in-out;
 }
 
-.likes-btn:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.6);
-  cursor: pointer;
-}
-
 /*Search Bar*/
 
 .search_post{
@@ -308,7 +302,7 @@ input[type="submit"]:hover {
   padding: 10px;
   margin: 0 auto;
   bottom: 0;
-  height: 60px;
+  height: 75px;
   width: 100%;
   background-color: #f2f2f2;
   z-index: 1;
