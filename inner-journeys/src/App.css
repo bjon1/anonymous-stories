@@ -16,63 +16,49 @@ body, html {
 /*Post-related*/
 
 #grid {
-  margin: 1em 15em;
-  margin-bottom: 8em;
+  margin: 8em 10em;
   display: grid;
   height: 100vh;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  gap: 25px;
-
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
 /* Media query for screens between 600px and 1200px */
 @media (min-width: 700px) and (max-width: 1200px) {
   #grid {
-    margin-left: calc(15em - 15vw);
-    margin-right: calc(15em - 15vw);
-    margin-bottom: 20em;
+    margin-left: 10em;
+    margin-bottom: 10em;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-  }
-  
-  .square {
-    padding: 8px;
+    grid-template-rows: repeat(3, 1fr);
   }
 }
 
 /* Media query for screens smaller than 600px */
 @media (max-width: 700px) {
   #grid {
-    
-    margin: 1em calc(10em - 25vw) 30em calc(10em - 25vw);
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(8, 1fr);
   }
-  
+
   .square {
-    padding: 5px;
+    margin-bottom: 2em;
   }
 }
 
 .square {
-  position: relative;
-  max-height: 500px;
-  padding: 3em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 1vw;
-  font-weight: bold;
-  flex: 1 0 calc(33.333% - 1px);
-  opacity: 1;
+  display: block;
+  height: 200px;
+  width: 200px;
+  padding: 16px;
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  transition: transform 0.15s linear;
   transition: opacity 0.3s ease-in-out;
+  transform: rotate(-6deg);
 }
 
-.square:hover {
-  opacity: 0.8;
-  transform: scale(1.01);
+.square:hover, .square:focus {
+  z-index: 999;
+  transform: scale(1.25);
+  box-shadow: 10px 10px 7px rgba(0,0,0,0.7);
 }
 
 .likes-btn {
