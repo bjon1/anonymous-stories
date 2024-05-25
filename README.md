@@ -1,14 +1,19 @@
-# Web Development Final Project - *Anonymous Stories*
+# *Anonymous Stories*
 
-Submitted by: **Benjamin Jon**
+This web app allows users to anonymously share their deepest secrets on a website where others can relate and share their thoughts. 
 
-This web app: **Allows users to anonymously share their deepest secrets**
+## Technology Stack:
+React & Supabase
 
-Time spent: **13** hours spent in total
+## Video Walkthrough
 
-## Required Features
+Here's a walkthrough of implemented user stories:
 
-The following **required** functionality is completed:
+<img src='./anonymousstories.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+## Features
+
+The following functionality has been completed!
 
 - [X] **A create form that allows the user to create posts**
 - [X] **Posts have a title and optionally additional textual content and/or an image added as an external image URL**
@@ -22,7 +27,7 @@ The following **required** functionality is completed:
 - [X] **Each post should have an upvote button on the post's page. Each click increases its upvotes count by one and users can upvote any number of times**
 - [X] **A previously created post can be edited or deleted from its post page**
 
-The following **optional** features are implemented:
+# Future Feature Plans:
 
 - [ ] Users can only edit and deleted posts or delete comments by entering the secret key, which is set by the user during post creation
 - [ ] Upon launching the web app, the user is assigned a random user ID. It will be associated with all posts and comments that they make and displayed on them.
@@ -33,35 +38,4 @@ The following **optional** features are implemented:
 - [ ] Users can upload images directly from their local machine as an image file
 - [ ] Display a loading animation whenever data is being fetched
 
-The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
-
-## Video Walkthrough
-
-Here's a walkthrough of implemented user stories:
-
-<img src='./anonymousstories.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with ...  
-https://www.cockos.com/licecap/
-
-## Notes
-
-Future updates include: a log-in system
-
-## License
-
-    Copyright [2023] [Benjamin Jon]
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
